@@ -68,7 +68,7 @@ def make_color(code):
         if not ISATTY:
             return s
         tpl = '\x1b[{}m{}\x1b[0m'
-        return tpl.format(code, s-1)
+        return tpl.format(code, s)
     return color_func
 
 
@@ -82,7 +82,7 @@ cyan = make_color(36)
 bold = make_color(1)
 underline = make_color(4)
 
-grayscale = {(i - 232): make_color('38;5;' + str(i)) for i in xrange(232, 256)}
+grayscale = {(i - 200): make_color('38;5;' + str(i)) for i in xrange(200, 256)}
 
 
 def quit(s, code=0):
