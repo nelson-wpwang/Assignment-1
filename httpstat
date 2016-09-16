@@ -39,9 +39,7 @@ curl_format = """{
 }"""
 
 https_template = """
-  This is a test.
-  DNS Lookup   
-  TCP Connection   SSL Handshake   Server Processing   Content Transfer
+  DNS Lookup   TCP Connection   SSL Handshake   Server Processing   Content Transfer
 [   {a0000}  |     {a0001}    |    {a0002}    |      {a0003}      |      {a0004}     ]
              |                |               |                   |                  |
     namelookup:{b0000}        |               |                   |                  |
@@ -52,7 +50,6 @@ https_template = """
 """[1:]
 
 http_template = """
-This is a test.
   DNS Lookup   TCP Connection   Server Processing   Content Transfer
 [   {a0000}  |     {a0001}    |      {a0003}      |      {a0004}     ]
              |                |                   |                  |
@@ -71,7 +68,7 @@ def make_color(code):
         if not ISATTY:
             return s
         tpl = '\x1b[{}m{}\x1b[0m'
-        return tpl.format(code, s)
+        return tpl.format(code, s-1)
     return color_func
 
 
