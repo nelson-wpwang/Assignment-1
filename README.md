@@ -1,41 +1,18 @@
-# httpstat
+EC601 Homework1
 
-curl statistics made simple.
+Group Members:
+Wenpeng Wang        wpwang@bu.edu 
+Yihan Li            liyihan@bu.edu
 
-![screenshot](screenshot.png)
+We chose Httpstat in Python as our homework. 
+This is a modification work that modify the original code from coder Xiao Meng from https://github.com/reorx/httpstat.
 
+Major modifications we made:
+1. Template change to let it look more fancy.
+2. Color change in the output.
+3. Add in an function that calculates the percentage each part took in the connection.
+4. Add in a sentence to show whether the website is based on http or a more secured https.
 
-httpstat is a **single file🌟** Python script that has **no dependency👏** and is compatible with **Python 3🍻**.
-
-
-## Installation
-
-There are three ways to get `httpstat`:
-
-- Download the script directly: `wget https://raw.githubusercontent.com/reorx/httpstat/master/httpstat.py`
-
-- Install through pip: `pip install httpstat`
-
-- Install through homebrew (macOS only): `brew install httpstat`
+The display after our modification is shown below:
 
 
-## Usage
-
-Just pass a url with it:
-
-```bash
-python httpstat.py httpbin.org/get
-```
-
-By default it will write response body in a tempfile, but you can let it print out by setting `HTTPSTAT_SHOW_BODY=true`:
-
-```bash
-HTTPSTAT_SHOW_BODY=true python httpstat.py httpbin.org/get
-```
-
-You can pass any curl supported arguments after the url (except for `-w`, `-D`, `-o`, `-s`, `-S` which are already used by httpstat):
-
-```bash
-HTTPSTAT_SHOW_BODY=true python httpstat.py httpbin.org/post -X POST --data-urlencode "a=中文" -v
-```
-# Assignment-1
