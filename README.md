@@ -19,3 +19,5 @@ Me and my teammates are really thankful for Prof.Alshaykh for providing us this 
 The display after our modification is shown below:
 ![alt tag](https://github.com/nelson-wpwang/Assignment-1/blob/master/Simple%20Example.png)
 
+This is how our Trello looks like:
+![alt tag](https://github.com/nelson-wpwang/Assignment-1/blob/master/Trello%20Screen%20Shot.png)
