@@ -14,5 +14,5 @@ Major modifications we made:
 4. Add in a sentence to show whether the website is based on http or a more secured https.
 
 The display after our modification is shown below:
-
+![alt tag](https://github.com/nelson-wpwang/Assignment-1/blob/master/Simple%20Example.png)
 
