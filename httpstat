@@ -39,6 +39,7 @@ curl_format = """{
 }"""
 
 https_template = """
+**********************************************************************************************
   DNS Lookup   TCP Connection   SSL Handshake   Server Processing   Content Transfer
 [   {a0000}  |     {a0001}    |    {a0002}    |      {a0003}      |      {a0004}     ]
     {c0000}  |     {c0001}    |    {c0002}    |      {c0003}      |      {c0004}     |
@@ -47,9 +48,11 @@ https_template = """
                                     pretransfer:{b0002}           |                  |
                                                       starttransfer:{b0003}          |
                                                                                  total:{b0004}
+**********************************************************************************************
 """[1:]
 
 http_template = """
+******************************************************************************
   DNS Lookup   TCP Connection   Server Processing   Content Transfer
 [   {a0000}  |     {a0001}    |      {a0003}      |      {a0004}     ]
     {c0000}  |     {c0001}    |      {c0003}      |      {c0004}     |
@@ -57,6 +60,7 @@ http_template = """
                         connect:{b0001}           |                  |
                                       starttransfer:{b0003}          |
                                                                  total:{b0004}
+******************************************************************************
 """[1:]
 
 
@@ -82,7 +86,7 @@ cyan = make_color(36)
 bold = make_color(1)
 underline = make_color(4)
 
-grayscale = {(i - 200): make_color('38;5;' + str(i)) for i in xrange(200, 256)}
+grayscale = {(i - 232): make_color('38;5;' + str(i)) for i in xrange(200, 256)}
 
 
 def quit(s, code=0):
@@ -219,17 +223,20 @@ def main():
         else:
             print(body)
     else:
-        print('{} stored in: {}'.format(green('Body'), bodyf.name))
+        print('{} stored in: {}'.format(cyan('Body'), bodyf.name))
 
+    print()
     # print stat
     if url.startswith('https://'):
         template = https_template
+        print('This is a https website.')
     else:
         template = http_template
+        print('This is a http website.')
 
     # colorize template first line
     tpl_parts = template.split('\n')
-    tpl_parts[0] = grayscale[14](tpl_parts[0])
+    tpl_parts[0] = red(tpl_parts[0])
     template = '\n'.join(tpl_parts)
 
     def fmta(s):
